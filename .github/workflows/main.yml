@@ -4,21 +4,6 @@ on:
   push:
 
 jobs:
-  cache-job:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Cache dependencies
-        id: cache-step
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache
-          key: cache-518f57f
-
-      - name: prime-cache-518f57f
-        run: echo "Cache hit? ${{ steps.cache-step.outputs.cache-hit }}"
-
   test:
     runs-on: ubuntu-latest
     steps:
